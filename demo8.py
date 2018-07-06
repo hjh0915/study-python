@@ -31,10 +31,12 @@ def age(x):
 
 
 if __name__ == '__main__':
+    import sys
     while True:
-        x = raw_input('请输入身份证号：')
+        print('请输入身份证号：')
+        x = sys.stdin.readline()
 
-        if len(x) == 18:
+        if len(x[:-1]) == 18:
             print('出生日期： %s' % birth_date(x))
             print('性别： %s' % sex(x))
             print('年龄： %s' % age(x))
