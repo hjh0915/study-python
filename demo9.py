@@ -19,9 +19,9 @@ class Person:
         y = int(self.id_card[16])
         # 偶数是女，奇数是男
         if y % 2 == 0:
-            return '女'
+            return 'F'
         else:
-            return '男'
+            return 'M'
 
     @property
     def age(self):
@@ -33,16 +33,18 @@ class Person:
 
 
 if __name__ == '__main__':
-    x1 = Person('胡俊华', '360103199909150025')
+    x1 = Person('hjh', '360103199909150025')
     print ('姓名: %s 出生日期: %s 性别: %s 年龄: %s' % (x1.name, x1.birth_date, x1.sex, x1.age))
 
-    x2 = Person('胡志刚', '360102197209163874')
+    x2 = Person('hzg', '360102197209163874')
     print ('姓名: %s 出生日期: %s 性别: %s 年龄: %s' % (x2.name, x2.birth_date, x2.sex, x2.age))
     
     f = open('work_demo9.txt', 'w')
-    f.write('姓名: {} 出生日期: {} 性别: {} 年龄: {}'.format(x1.name, x1.birth_date, x1.sex, x1.age))
+    f.write('{0:10} {1:10} {2:10} {3:<10}'.format('name','date','sex','age'))
     f.write('\n')
-    f.write('姓名: {} 出生日期: {} 性别: {} 年龄: {}'.format(x2.name, x2.birth_date, x2.sex, x2.age))
+    f.write('{0:10} {1:10} {2:10} {3:<10d}'.format(x1.name, x1.birth_date, x1.sex, x1.age))
+    f.write('\n')
+    f.write('{0:10} {1:10} {2:10} {3:<10d}'.format(x2.name, x2.birth_date, x2.sex, x2.age))
     f.close()
 
 
