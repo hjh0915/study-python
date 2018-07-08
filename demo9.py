@@ -38,4 +38,11 @@ if __name__ == '__main__':
 
     x2 = Person('胡志刚', '360102197209163874')
     print ('姓名: %s 出生日期: %s 性别: %s 年龄: %s' % (x2.name, x2.birth_date, x2.sex, x2.age))
+    
+    f = open('work_demo9.txt', 'w')
+    f.write('姓名: {} 出生日期: {} 性别: {} 年龄: {}'.format(x1.name, x1.birth_date, x1.sex, x1.age))
+    f.write('\n')
+    f.write('姓名: {} 出生日期: {} 性别: {} 年龄: {}'.format(x2.name, x2.birth_date, x2.sex, x2.age))
+    f.close()
+
 
