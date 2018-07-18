@@ -21,6 +21,7 @@ class TestDemo41(unittest.TestCase):
         self.assertEqual(expected, result)
         
 
+#python test_demo41.py -v
 unittest.main()
     
 
