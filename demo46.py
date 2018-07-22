@@ -1,3 +1,4 @@
+# -*- coding: utf8 -*-
 class Review:
     """ A review of a restaurant. """
     def __init__(self, reviewer_name, review_comments, is_recommended):
@@ -129,10 +130,27 @@ class Restaurant:
             else:    
                 bad_review = bad_review + 1 
         
-        return (good_review * 1.0) / (good_review + bad_review) * 100 
+        x = (good_review * 1.0) / (good_review + bad_review) * 100 
+        return round(x, 2)
 
 if __name__=='__main__':
-    import doctest
-    doctest.testmod()
+    #import doctest
+    #doctest.testmod()
+
+    rest = Restaurant('余干菜馆', 'RMB', ['中国'] )
+
+    r1 = Review('胡俊华', '辣椒小炒肉很好吃', True)
+    rest.add_review(r1)
+
+    r2 = Review('胡志刚', '都不错', True)
+    rest.add_review(r2)
+
+    r3 = Review('小华', '不好吃', False)
+    rest.add_review(r3)
+    
+    x = rest.recommended_percentage()
+    print '{}%'.format(x)
+
+
 
     
