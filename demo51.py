@@ -1,8 +1,8 @@
 # -*- coding: utf8 -*-
 
 def encode(message, encoding):
-    """(str, ) -> str
-    
+    """(str) -> str
+    返回原始消息
     >>> encode("foot", ('abcdefghijklmnopqrstuvwxyz', 'wxyzopqrstuvghijklmnabcdef'))
     'piin'
 
@@ -17,7 +17,7 @@ def encode(message, encoding):
     return s
 
 def decode(message, encoding):
-    """(str, ) -> str
+    """(str) -> str
 
     前提条件：
     1. 原始消息只包含小写字母，不包含空格、数字、标点符号
