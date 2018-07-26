@@ -12,17 +12,20 @@ def populate_dictionary(definition_file):
     it should appear as a key in the dictionary.
     """
     d = {}
-    x = definiton_file.readline().strip()
+    x = definition_file.readline().strip()
     while x != '':
-        d[word] = []
+        d[x] = []
+        y = definition_file.readline().strip()
+        while y != '':
+            d[x].append(y)
+            y = definition_file.readline().strip()
         x = definition_file.readline().strip()
-        while x != '':
-            d[word].append(x)
-            x = definiton_file.readline().strip()
-        x = definiton_file.readline().strip()
-        definition_file.close()
+     
     return d 
 
 if __name__ == '__main__':
-    import doctest
-    doctest.testmod()
+    f = open('definition_file.txt', 'r')
+
+    print populate_dictionary(f)
+
+    
