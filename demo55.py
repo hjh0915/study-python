@@ -12,14 +12,14 @@ def populate_dictionary(definition_file):
     it should appear as a key in the dictionary.
     """
     d = {}
-    x = definiton_file.readline()
-    while words != '':
+    x = definiton_file.readline().strip()
+    while x != '':
         d[word] = []
-        x = definition_file.readline()
+        x = definition_file.readline().strip()
         while x != '':
             d[word].append(x)
-            x = definiton_file.readline()
-    
+            x = definiton_file.readline().strip()
+        x = definiton_file.readline().strip()
     return d 
 
 if __name__ == '__main__':
