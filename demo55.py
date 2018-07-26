@@ -13,6 +13,8 @@ def populate_dictionary(definition_file):
     """
     d = {}
     x = definition_file.readline().strip()
+    while x == '':
+        x = definition_file.readline().strip()
     while x != '':
         d[x] = []
         y = definition_file.readline().strip()
