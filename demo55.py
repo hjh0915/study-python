@@ -20,6 +20,7 @@ def populate_dictionary(definition_file):
             d[word].append(x)
             x = definiton_file.readline().strip()
         x = definiton_file.readline().strip()
+        definition_file.close()
     return d 
 
 if __name__ == '__main__':
