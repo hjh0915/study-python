@@ -20,13 +20,13 @@ def print_table(n):
     s = ''
     for i in numbers:
         s = s + '\t' + str(i)
-    print s
+    print(s)
 
     for i in numbers:
         s = str(i)
         for j in numbers:
             s = s + '\t' + str(i * j)
-        print s
+        print(s)
 
 def multiply_form(n):
     numbers = list(range(1, n + 1))
@@ -35,21 +35,21 @@ def multiply_form(n):
         s = ''
         for j in numbers:
             s = s + ' '*4 + ('{0:d}x{1:d}={2:2d}'.format(i, j, i*j))
-        print s 
+        print(s) 
 
 def multiply_triangle(n):
     for i in range(1, 10):
         s = ''
         for j in range(1, i + 1):
             s = s + ' '*4 + ('{0:d}x{1:d}={2:2d}'.format(i, j, i*j))
-        print s 
+        print(s) 
 
 def multiply_reverse(n):
     for i in range(9, 0, -1):
         s = ''
         for j in range(1, i + 1):
             s = s + ' '*4 + ('{0:d}x{1:d}={2:2d}'.format(i, j, i*j))
-        print s
+        print(s)
             
 def multiply_01(n):
     i = 1
@@ -60,7 +60,7 @@ def multiply_01(n):
             s = s + ' '*4 + ('{0:d}x{1:d}={2:2d}'.format(i, j, i*j))
             j = j + 1
         i = i + 1
-        print s
+        print(s)
 
 def multiply_02(n):
     i = 9
@@ -71,7 +71,7 @@ def multiply_02(n):
             s = s + ' '*4 + ('{0:d}x{1:d}={2:2d}'.format(i, j, i*j))
             j = j + 1
         i = i - 1
-        print s 
+        print(s) 
 
 
 
@@ -80,17 +80,17 @@ def multiply_02(n):
 
 if __name__ == '__main__':
 
-    print print_table(5)
+    print(print_table(5))
 
-    print multiply_form(9)
+    print(multiply_form(9))
     
-    print multiply_triangle(9)
+    print(multiply_triangle(9))
 
-    print multiply_reverse(9)
+    print(multiply_reverse(9))
 
-    print multiply_01(9)
+    print(multiply_01(9))
 
-    print multiply_02(9)
+    print(multiply_02(9))
 
 
 
