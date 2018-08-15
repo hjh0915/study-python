@@ -53,14 +53,8 @@ def get_days_02(loop_days: int, start: datetime, now: datetime) -> str:
     >>> get_date(loop_days, start, now)
     (datetime.datetime(2018, 7, 19, 0, 0), datetime.datetime(2018, 8, 16, 0, 0))
     """
-    x1 = start 
-    x2 = x1 + timedelta(days=loop_days)
-    diff = now - x1
-    x = diff % loop_days
-    while True:
-        if (x1 < now) and (now < x2):
-            return (x1, x2)
-        x1 = x1 + x * timedelta(days=loop_days+1)
-        x2 = x2 + x * timedelta(days=loop_days)
-
-
+    diff = (now - start).days 
+    n = diff // loop_days
+    x1 = start + timedelta(days=n*loop_days+n)
+    x2 = x1 + timedelta(days=loop_days-n)
+    return (x1, x2)
